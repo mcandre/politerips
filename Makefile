@@ -9,4 +9,7 @@ shellcheck:
 checkbashisms:
 	-checkbashisms -n -p lib/*
 
-lint: shlint checkbashisms shellcheck
+lili:
+	bundle exec lili .
+
+lint: shlint checkbashisms shellcheck lili
