@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+#
+# Usage:
+#
+# wget-memegenerator <tag>
+
+DELAY=2 # sec
+
+TAG="$1"
+
+wget -q \
+  -mpNHk \
+  -D "memegenerator.net,cdn.meme.am" \
+  --exclude-domains "blog.memegenerator.net,api.memegenerator.net,es.memegenerator.net,ru.memegenerator.net" \
+  -w $DELAY \
+  -nd \
+  -P "$TAG" \
+  -I "$TAG/,$TAG/images/,instance/,instances/" \
+  -X "*/250x250/,*/400x/" \
+  -R "new" \
+  --ignore-tags="" \
+  "http://memegenerator.net/$TAG/"
+
+# rm "$TAG/index.html"
