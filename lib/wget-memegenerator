@@ -28,3 +28,7 @@ for PAGE in $(seq 1 $PAGES); do
 done
 
 find "$TAG" ! -name '*.jpg' -delete
+
+zip -r "$TAG (memegenerator).cbz" "$TAG"
+
+rm -rf "$TAG"
