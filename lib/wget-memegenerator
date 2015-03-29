@@ -8,7 +8,7 @@ DELAY=1 # sec
 
 TAG="$1"
 
-DIR="memegenerator-$TAG"
+DIR="memegenerator - $TAG"
 
 PAGES=$(wget -q -O- "http://memegenerator.net/$TAG/images/new/alltime/page/1" | grep » -B 6 | grep page | head -n 1 | tr "[<>]" " " | awk '{ print $3 }')
 
