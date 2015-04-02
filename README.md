@@ -5,8 +5,9 @@ politerips is a collection of scripts for archiving websites, with an effort mad
 # EXAMPLE
 
 ```
-$ wget-memegenerator Philosoraptor
-$ open "memegenerator - Philosoraptor.cbz"
+$ wget-memegenerator Baby-Courage-Wolf
+...
+$ open "memegenerator - Baby-Courage-Wolf.cbz"
 ```
 
 # INSTALL
