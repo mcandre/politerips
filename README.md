@@ -2,6 +2,13 @@
 
 politerips is a collection of scripts for archiving websites, with an effort made to prevent overloading the site with too many requests per second.
 
+# EXAMPLE
+
+```
+$ wget-memegenerator Philosoraptor
+$ open "memegenerator - Philosoraptor.cbz"
+```
+
 # INSTALL
 
 1. `git clone https://github.com/mcandre/politerips`
