@@ -32,14 +32,30 @@ $ brew install wget xmlstarlet
 
 ## Optional
 
+* [checkbashisms](http://sourceforge.net/projects/checkbaskisms/)
+
+```
+$ brew install checkbashisms
+```
+
 * [Ruby](https://www.ruby-lang.org/)
-* [Haskell](https://www.haskell.org/)
+* [shlint](https://rubygems.org/gems/shlint)
 
 ```
 $ bundle
 ```
 
+* [Haskell](https://www.haskell.org/)
+* [ShellCheck](https://github.com/koalaman/shellcheck)
+
 ```
 $ brew install ghc cabal-install
-$ cabal install shellcheck
+$ cabal update
+$ cabal install ShellCheck
+```
+
+# LINTING
+
+```
+$ make lint
 ```
