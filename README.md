@@ -67,6 +67,8 @@ export PATH
 
 # LINTING
 
+Keep the scripts tidy:
+
 ```
 $ make lint
 ```
