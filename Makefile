@@ -7,7 +7,7 @@ shellcheck:
 	-shellcheck lib/*
 
 checkbashisms:
-	-checkbashisms -n -p lib/*
+	-checkbashisms -n -p lib/* | grep -v "^$$"; true
 
 lili:
 	bundle exec lili .
