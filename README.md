@@ -54,6 +54,16 @@ $ cabal update
 $ cabal install ShellCheck
 ```
 
+Then add Cabal bin directories to `PATH`:
+
+```
+PATH="$PATH:/Library/Haskell/bin"
+PATH="$PATH:$HOME/Library/Haskell/bin"
+PATH="$PATH:$HOME/.cabal/bin"
+
+export PATH
+```
+
 # LINTING
 
 ```
