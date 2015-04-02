@@ -10,11 +10,11 @@ TAG="$1"
 
 DIR="memegenerator - $TAG"
 
-PAGES=$(wget -q -O- "http://memegenerator.net/$TAG/images/new/alltime/page/1" | grep '\xBB' -B 6 | grep page | head -n 1 | tr "[<>]" " " | awk '{ print $3 }')
+PAGES=$(wget -q -O- "http://memegenerator.net/$TAG/images/new/alltime/page/1" | grep '\xBB' -B 6 | grep page | head -n 1 | tr '<>' ' ' | awk '{ print $3 }')
 
 echo "Downloading $PAGES memes..."
 
-for PAGE in $(seq 1 $PAGES); do
+for PAGE in $(seq 1 "$PAGES"); do
   wget -q \
     -rN \
     --no-remove-listing \
