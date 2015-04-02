@@ -1,7 +1,7 @@
 all: lint
 
 shlint:
-	-shlint lib/
+	-shlint lib/ | grep -v "^$$"; true
 
 shellcheck:
 	-shellcheck lib/*
