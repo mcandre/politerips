@@ -17,7 +17,7 @@ PAGES=$(binfix -p "$PAGES")
 echo "Downloading $PAGES memes..."
 
 for PAGE in $(seq 1 "$PAGES"); do
-  wget -q \
+  wget \
     -rN \
     --no-remove-listing \
     -pNHk \

@@ -19,7 +19,7 @@ if [ "$PAGE" = "" ]
 then
   dA=$(wget -q -w $DELAY -O- "http://backend.deviantart.com/rss.xml?q=gallery%3A$1+sort%3Atime&type=deviation")
 else
-  dA=$(wget -q -w $DELAY -O- "$PAGE")
+  dA=$(wget -w $DELAY -O- "$PAGE")
 fi
 
 echo "$dA" | xmlstarlet sel -T -t -v //media:content/@url | xargs wget -q -w $DELAY -P "$ARTIST"

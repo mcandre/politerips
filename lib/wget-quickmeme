@@ -10,7 +10,7 @@ TAG="$1"
 
 DIR="quickmeme - $TAG"
 
-wget -q \
+wget \
   -mpNHk \
   -D "www.quickmeme.com,s2.quickmeme.com" \
   -w $DELAY \
