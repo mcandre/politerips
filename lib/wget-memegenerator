@@ -1,14 +1,19 @@
 #!/bin/sh
-#
-# Usage:
-#
-# wget-memegenerator <tag>
 
-DELAY=1 # sec
+usage() {
+  echo "Usage: $0 <tag>"
+  exit 0
+}
+
+if [ -z "$1" ]; then
+  usage
+fi
 
 TAG="$1"
 
 DIR="memegenerator - $TAG"
+
+DELAY=1 # sec
 
 PAGES=$(wget -q -O- "http://memegenerator.net/$TAG/images/new/alltime/page/1" | grep '\xBB' -B 6 | grep page | head -n 1 | tr '<>' ' ' | awk '{ print $3 }')
 
@@ -24,7 +29,7 @@ for PAGE in $(seq 1 "$PAGES"); do
     -l 1 \
     -D "memegenerator.net,cdn.meme.am" \
     --exclude-domains "blog.memegenerator.net,api.memegenerator.net,es.memegenerator.net,ru.memegenerator.net" \
-    -w $DELAY \
+    -w "$DELAY" \
     -nd \
     -P "$DIR" \
     -I "$TAG/,$TAG/images/,instance/,instances/" \

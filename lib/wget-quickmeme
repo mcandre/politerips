@@ -1,19 +1,24 @@
 #!/bin/sh
-#
-# Usage:
-#
-# wget-quickmeme <tag>
 
-DELAY=2 # sec
+usage() {
+  echo "Usage: $0 <tag>"
+  exit 0
+}
+
+if [ -z "$1" ]; then
+  usage
+fi
 
 TAG="$1"
 
 DIR="quickmeme - $TAG"
 
+DELAY=2 # sec
+
 wget \
   -mpNHk \
   -D "www.quickmeme.com,s2.quickmeme.com" \
-  -w $DELAY \
+  -w "$DELAY" \
   -nd \
   -P "$DIR" \
   -I "$TAG/,img/,meme/" \
