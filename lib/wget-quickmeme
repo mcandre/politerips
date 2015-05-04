@@ -4,7 +4,7 @@
 #
 # wget-quickmeme <tag>
 
-DELAY=2 # sec
+DELAY='2' # sec
 
 TAG="$1"
 
@@ -13,7 +13,7 @@ DIR="quickmeme - $TAG"
 wget -q \
   -mpNHk \
   -D "www.quickmeme.com,s2.quickmeme.com" \
-  -w $DELAY \
+  -w "$DELAY" \
   -nd \
   -P "$DIR" \
   -I "$TAG/,img/,meme/" \

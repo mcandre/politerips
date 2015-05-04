@@ -4,7 +4,7 @@
 #
 # wget-memegenerator <tag>
 
-DELAY=1 # sec
+DELAY='1' # sec
 
 TAG="$1"
 
@@ -24,7 +24,7 @@ for PAGE in $(seq 1 "$PAGES"); do
     -l 1 \
     -D "memegenerator.net,cdn.meme.am" \
     --exclude-domains "blog.memegenerator.net,api.memegenerator.net,es.memegenerator.net,ru.memegenerator.net" \
-    -w $DELAY \
+    -w "$DELAY" \
     -nd \
     -P "$DIR" \
     -I "$TAG/,$TAG/images/,instance/,instances/" \

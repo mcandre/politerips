@@ -9,23 +9,22 @@
 # wget - https://www.gnu.org/software/wget/
 # xmlstarlet - http://xmlstar.sourceforge.net/
 
-DELAY=2 # sec
+DELAY='2' # sec
 
 ARTIST="$1"
 
 PAGE="$2"
 
-if [ "$PAGE" = "" ]
-then
-  dA=$(wget -q -w $DELAY -O- "http://backend.deviantart.com/rss.xml?q=gallery%3A$1+sort%3Atime&type=deviation")
+if [ "$PAGE" = '' ]; then
+  dA=$(wget -q -w "$DELAY" -O- "http://backend.deviantart.com/rss.xml?q=gallery%3A$1+sort%3Atime&type=deviation")
 else
-  dA=$(wget -q -w $DELAY -O- "$PAGE")
+  dA=$(wget -q -w "$DELAY" -O- "$PAGE")
 fi
 
-echo "$dA" | xmlstarlet sel -T -t -v //media:content/@url | xargs wget -q -w $DELAY -P "$ARTIST"
+echo "$dA" | xmlstarlet sel -T -t -v //media:content/@url | xargs wget -q -w "$DELAY" -P "$ARTIST"
 
 NEXT=$(echo "$dA" | xmlstarlet sel -T -t -v "//atom:link[@rel='next']/@href")
-if [ "$NEXT" != "" ]
-then
+
+if [ "$NEXT" != "" ]; then
   "$0" "$ARTIST" "$NEXT"
 fi
