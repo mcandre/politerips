@@ -1,14 +1,19 @@
 #!/bin/sh
-#
-# Usage:
-#
-# wget-tumblr <tumblr-domain>
 
-DELAY='2' # sec
+usage() {
+  echo "Usage: $0 <tumblr-domain>"
+  exit 0
+}
+
+if [ -z "$1" ]; then
+  usage
+fi
 
 DOMAIN="$1"
 
-wget -q \
+DELAY='2' # sec
+
+wget \
   -nd \
   -P "$DOMAIN" \
   -mpNHk \
