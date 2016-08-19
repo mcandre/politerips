@@ -24,7 +24,6 @@ $ open "memegenerator - Baby-Courage-Wolf.cbz"
 * [GNU coreutils](https://www.gnu.org/software/coreutils/)
 * [awk](http://cm.bell-labs.com/cm/cs/awkbook/index.html)
 * [find](http://www.gnu.org/software/findutils/manual/html_mono/find.html)
-* [Node.js](https://nodejs.org/)
 * [binfix](https://www.npmjs.com/package/binfix)
 
 These dependencies are easiest to install on Unix-like OS's. For example, Mac users can install these with:
@@ -36,6 +35,7 @@ $ npm install -g binfix
 
 ## Optional
 
+* [Node.js](https://nodejs.org/) 0.11.6+
 * [checkbashisms](http://sourceforge.net/projects/checkbaskisms/)
 
 ```
