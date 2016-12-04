@@ -1,12 +1,12 @@
 #!/bin/sh
 
 usage() {
-  echo "Usage: $0 <tumblr-domain>"
-  exit 0
+    echo "Usage: $0 <tumblr-domain>"
+    exit 0
 }
 
 if [ -z "$1" ]; then
-  usage
+    usage
 fi
 
 DOMAIN="$1"
@@ -14,10 +14,10 @@ DOMAIN="$1"
 DELAY='2' # sec
 
 wget \
-  -nd \
-  -P "$DOMAIN" \
-  -mpNHk \
-  -D ".media.tumblr.com,media.tumblr.com,$DOMAIN" \
-  -w "$DELAY" \
-  -R "*avatar*,*\?*,*_[0-9][0-9][0-9].*" \
-  "http://$DOMAIN"
+    -nd \
+    -P "$DOMAIN" \
+    -mpNHk \
+    -D ".media.tumblr.com,media.tumblr.com,$DOMAIN" \
+    -w "$DELAY" \
+    -R "*avatar*,*\?*,*_[0-9][0-9][0-9].*" \
+    "http://$DOMAIN"

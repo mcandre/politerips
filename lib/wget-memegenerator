@@ -1,12 +1,12 @@
 #!/bin/sh
 
 usage() {
-  echo "Usage: $0 <tag>"
-  exit 0
+    echo "Usage: $0 <tag>"
+    exit 0
 }
 
 if [ -z "$1" ]; then
-  usage
+    usage
 fi
 
 TAG="$1"
@@ -22,20 +22,20 @@ PAGES=$(binfix -p "$PAGES")
 echo "Downloading $PAGES memes..."
 
 for PAGE in $(seq 1 "$PAGES"); do
-  wget \
-    -rN \
-    --no-remove-listing \
-    -pNHk \
-    -l 1 \
-    -D "memegenerator.net,cdn.meme.am" \
-    --exclude-domains "blog.memegenerator.net,api.memegenerator.net,es.memegenerator.net,ru.memegenerator.net" \
-    -w "$DELAY" \
-    -nd \
-    -P "$DIR" \
-    -I "$TAG/,$TAG/images/,instance/,instances/" \
-    -X "*/250x250/,*/400x/" \
-    -R "new,alltime" \
-    "http://memegenerator.net/$TAG/images/new/alltime/page/$PAGE"
+    wget \
+        -rN \
+        --no-remove-listing \
+        -pNHk \
+        -l 1 \
+        -D "memegenerator.net,cdn.meme.am" \
+        --exclude-domains "blog.memegenerator.net,api.memegenerator.net,es.memegenerator.net,ru.memegenerator.net" \
+        -w "$DELAY" \
+        -nd \
+        -P "$DIR" \
+        -I "$TAG/,$TAG/images/,instance/,instances/" \
+        -X "*/250x250/,*/400x/" \
+        -R "new,alltime" \
+        "http://memegenerator.net/$TAG/images/new/alltime/page/$PAGE"
 done
 
 find "$DIR" ! -name '*.jpg' -delete

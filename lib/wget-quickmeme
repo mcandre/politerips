@@ -1,12 +1,12 @@
 #!/bin/sh
 
 usage() {
-  echo "Usage: $0 <tag>"
-  exit 0
+    echo "Usage: $0 <tag>"
+    exit 0
 }
 
 if [ -z "$1" ]; then
-  usage
+    usage
 fi
 
 TAG="$1"
@@ -16,14 +16,14 @@ DIR="quickmeme - $TAG"
 DELAY='2' # sec
 
 wget \
-  -mpNHk \
-  -D "www.quickmeme.com,s2.quickmeme.com" \
-  -w "$DELAY" \
-  -nd \
-  -P "$DIR" \
-  -I "$TAG/,img/,meme/" \
-  -A ".html,.jpg,.jpeg,.gif,.png" \
-  "http://www.quickmeme.com/$TAG/"
+    -mpNHk \
+    -D "www.quickmeme.com,s2.quickmeme.com" \
+    -w "$DELAY" \
+    -nd \
+    -P "$DIR" \
+    -I "$TAG/,img/,meme/" \
+    -A ".html,.jpg,.jpeg,.gif,.png" \
+    "http://www.quickmeme.com/$TAG/"
 
 rm "$DIR/index.html"
 
