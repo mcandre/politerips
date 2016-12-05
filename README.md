@@ -28,6 +28,7 @@ $ open "memegenerator - Baby-Courage-Wolf.cbz"
 * [bashate](https://github.com/openstack-dev/bashate)
 * [shlint](https://rubygems.org/gems/shlint)
 * [shellcheck](http://hackage.haskell.org/package/ShellCheck)
+* [pargs](https://github.com/mcandre/pargs)
 * [editorconfig-tools](https://www.npmjs.com/package/editorconfig-tools)
 * [lili](https://rubygems.org/gems/lili)
 
