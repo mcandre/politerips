@@ -23,11 +23,11 @@ else
     dA=$(wget -w "$DELAY" -O- "$PAGE")
 fi
 
-echo "$dA" | \
+echo "$dA" |
     xmlstarlet \
         sel \
         -T -t \
-        -v //media:content/@url | \
+        -v //media:content/@url |
     xargs \
         wget \
         -q \
