@@ -21,4 +21,7 @@ editorconfig:
 lili:
 	bundle exec lili .
 
-lint: shfmt bashate shlint checkbashisms shellcheck editorconfig lili
+funk:
+	funk .
+
+lint: shfmt bashate shlint checkbashisms shellcheck editorconfig lili funk
