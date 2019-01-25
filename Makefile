@@ -1,13 +1,13 @@
 all: lint
 
+safety:
+	safety check
+
 shfmt:
 	@stank lib | xargs shfmt -w -i 4
 
 bashate:
 	@stank lib | xargs bashate
-
-shlint:
-	@stank lib | xargs shlint
 
 checkbashisms:
 	@stank lib | xargs checkbashisms -n -p
@@ -21,4 +21,4 @@ editorconfig:
 funk:
 	@funk .
 
-lint: shfmt bashate shlint checkbashisms shellcheck editorconfig funk
+lint: shfmt bashate checkbashisms shellcheck editorconfig funk
