@@ -18,7 +18,11 @@ ARTIST="$1"
 PAGE="$2"
 
 if [ "$PAGE" = '' ]; then
-    dA=$(wget -q -w "$DELAY" -O- "http://backend.deviantart.com/rss.xml?q=gallery%3A$1+sort%3Atime&type=deviation")
+    dA=$(wget \
+        -q \
+        -w "$DELAY" \
+        -O- \
+        "http://backend.deviantart.com/rss.xml?q=gallery%3A$1+sort%3Atime&type=deviation")
 else
     dA=$(wget -w "$DELAY" -O- "$PAGE")
 fi

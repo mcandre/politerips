@@ -16,7 +16,15 @@ DIR="memegenerator - $TAG"
 
 DELAY='1' # sec
 
-PAGES=$(wget -q -O- "http://memegenerator.net/$TAG/images/new/alltime/page/1" | grep '\xBB' -B 6 | grep page | head -n 1 | tr '<>' ' ' | awk '{ print $3 }')
+PAGES=$(wget \
+    -q \
+    -O- \
+    "http://memegenerator.net/$TAG/images/new/alltime/page/1" |
+    grep '\xBB' -B 6 |
+    grep page |
+    head -n 1 |
+    tr '<>' ' ' |
+    awk '{ print $3 }')
 
 PAGES=$(binfix -p "$PAGES")
 
