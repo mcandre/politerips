@@ -1,2 +1,7 @@
 #!/bin/sh
-stank . | xargs bashate -i E006
+set -eu
+IFS="$(printf '%b_' '\n\t ')"
+IFS="${IFS%_}"
+
+stank . |
+    xargs bashate -i E006
