@@ -1,6 +1,6 @@
 #!/bin/bash
 unset IFS
-set -eEuo pipefail
+set -euf
 
 usage() {
     echo "Usage: $0 <tag>"
